@@ -36,9 +36,20 @@ The rule caps weights and not compute. See [the speed table](#count-compute-too-
 
 ---
 
-## No design passes the win rule
+## No module passes the win rule, published or new
 
 About 90 designs ran, counting table-size variants. `magree` is the closest on facts and `mbuck64` is the closest on the relation gap. Each one fails a different part of the rule.
+
+The rule is strict, and the published modules fail it too. Scored against the other 8 baselines with `python3 beat.py TIER NAME`:
+
+| Tier | Closest published module | Worst web z | Other scores lost |
+|---|---|---|---|
+| 1m | MoME | -0.8 | 1 of 5 |
+| 5m | MoME | +1.6 | 4 of 5 |
+| 5m | value embeddings | -1.6 | 2 of 5 |
+| 1h | MoME | +4.2 | 4 of 5 |
+
+So treat the rule as a target. A module can be useful for one job and fail it.
 
 ### At 5m, `magree` leads on web text and facts and loses the relation gap
 

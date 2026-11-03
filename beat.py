@@ -38,7 +38,7 @@ for m in ours:
     print(f"| {m} {best[m]['lr']:g} | {best[m]['cost']['total'] / 1e6:.2f}M | " + " | ".join(f"{best[m]['scores'][k]:.3f} ({z(m, top(k), k):+.1f})" for k in HEAD) + " |")
 print()
 for m in ours:
-    web = min(z(m, b, HEAD[0]) for b in base); lost = [(k, b) for k in HEAD[1:] for b in base if z(m, b, k) <= -2]
+    web = min(z(m, b, HEAD[0]) for b in base if b != m); lost = [(k, b) for k in HEAD[1:] for b in base if b != m and z(m, b, k) <= -2]
     w = sum(z(m, top(k), k) >= 2 for k in judges if k in items[m]); l = sum(z(m, top(k), k) <= -2 for k in judges if k in items[m])
     ok = web >= 2 and not lost and best[m]["cost"]["total"] <= cap
     print(f"{m}: {'WIN' if ok else 'no'}. Worst web z against a baseline {web:+.1f}. Headline losses: {', '.join(f'{k.split('.')[-2] if k.count('.') > 1 else k} to {b}' for k, b in lost) or 'none'}. All judging scores against the best baseline on each: {w} better, {l} worse. Weights {'over' if best[m]['cost']['total'] > cap else 'within'} the limit.")
