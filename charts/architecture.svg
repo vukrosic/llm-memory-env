@@ -33,7 +33,7 @@
 <polyline points="225,551 225,485" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/>
 <polyline points="225,490 225,470" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
 <rect x="140.0" y="430.0" width="170" height="40" rx="7" fill="#FFE6CC" stroke="#7A5A36" stroke-width="1.4"/>
-<text x="225" y="450" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Attention + Table</text>
+<text x="225" y="450" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Attention + MoME</text>
 <polyline points="225,430 225,402" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
 <circle cx="225" cy="390" r="10" fill="#fff" stroke="#111" stroke-width="1.4"/>
 <path d="M215,390H235M225,380V400" stroke="#111" stroke-width="1.3"/>
@@ -51,6 +51,9 @@
 <text x="225" y="168" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="middle" dominant-baseline="central">key: last 2 and 3 tokens</text>
 <circle cx="225" cy="112" r="10" fill="#fff" stroke="#111" stroke-width="1.4"/>
 <path d="M215,112H235M225,102V122" stroke="#111" stroke-width="1.3"/>
+<polyline points="315,158 333,158" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="333.0" y="143.0" width="94" height="30" rx="7" fill="#F8C9B8" stroke="#C2452D" stroke-width="2.2"/>
+<text x="380" y="158" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">starts at zero</text>
 <polyline points="225,133 225,124" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
 <polyline points="225,200 107,200 107,112 213,112" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
 <polyline points="225,102 225,86" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
@@ -64,7 +67,7 @@
 <rect x="510.0" y="855.0" width="130" height="34" rx="7" fill="#FFE6CC" stroke="#7A1F1F" stroke-width="1.4"/>
 <text x="575" y="872" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Hidden State h</text>
 <polyline points="575,855 575,790" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/>
-<polyline points="575,790 1184,790" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/>
+<polyline points="575,790 1160,790" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/>
 <polyline points="575,790 575,730" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
 <polygon points="546.0,730.0 604.0,730.0 590.08,696.0 559.92,696.0" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4" stroke-linejoin="round"/>
 <text x="575" y="714" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Q</text>
@@ -76,87 +79,58 @@
 <polygon points="686.0,730.0 744.0,730.0 730.08,696.0 699.92,696.0" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4" stroke-linejoin="round"/>
 <text x="715" y="714" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">V</text>
 <circle cx="715" cy="790" r="3" fill="#111"/>
-<polyline points="575,696 575,660" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<polyline points="645,696 645,660" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<polyline points="715,696 715,660" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="545.0" y="620.0" width="200" height="40" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
-<text x="645" y="640" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Scaled Dot Product</text>
-<polyline points="645,620 645,142" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<circle cx="645" cy="130" r="10" fill="#fff" stroke="#111" stroke-width="1.4"/>
-<path d="M635,130H655M645,120V140" stroke="#111" stroke-width="1.3"/>
-<polyline points="645,120 645,106" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="575,696 575,230" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="645,696 645,230" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="715,696 715,312" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<circle cx="715" cy="300" r="10" fill="#fff" stroke="#111" stroke-width="1.4"/>
+<path d="M705,300H725M715,290V310" stroke="#111" stroke-width="1.3"/>
+<polyline points="715,290 715,230" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="545.0" y="190.0" width="200" height="40" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
+<text x="645" y="210" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Scaled Dot Product</text>
+<polyline points="645,190 645,107" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
 <polygon points="600.0,107.0 690.0,107.0 668.4,73.0 621.6,73.0" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4" stroke-linejoin="round"/>
 <text x="645" y="91" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Linear</text>
 <polyline points="645,73 645,22" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<text x="634" y="400" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="italic" fill="#111" text-anchor="middle" dominant-baseline="central">y</text>
-<rect x="766.1" y="734" width="60.599999999999994" height="28" rx="6" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.2"/>
-<text x="796.4" y="748" font-family="Helvetica, Arial, sans-serif" font-size="14.5" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">France</text>
-<rect x="831.7" y="734" width="68.19999999999999" height="28" rx="6" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.2"/>
-<text x="865.8000000000001" y="748" font-family="Helvetica, Arial, sans-serif" font-size="14.5" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">capital</text>
-<rect x="904.9000000000001" y="734" width="30.2" height="28" rx="6" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.2"/>
-<text x="920.0000000000001" y="748" font-family="Helvetica, Arial, sans-serif" font-size="14.5" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">of</text>
-<rect x="940.1000000000001" y="734" width="37.8" height="28" rx="6" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.2"/>
-<text x="959.0000000000001" y="748" font-family="Helvetica, Arial, sans-serif" font-size="14.5" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">The</text>
-<rect x="759.1" y="728" width="225.80000000000007" height="40" fill="none" stroke="#555" stroke-width="1.2" stroke-dasharray="5 4"/>
-<polyline points="872,728 872,688" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="787.0" y="652.0" width="170" height="36" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
-<text x="872" y="670" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Top 4 Attended</text>
-<polyline points="745,640 814,640 814,651" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<text x="768" y="626" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" font-style="normal" fill="#333" text-anchor="start" dominant-baseline="central">weights</text>
-<polyline points="1045,790 1045,754" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<circle cx="1045" cy="790" r="3" fill="#111"/>
-<polygon points="1003.0,754.0 1087.0,754.0 1066.84,720.0 1023.16,720.0" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4" stroke-linejoin="round"/>
-<text x="1045" y="738" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Router</text>
-<polyline points="1045,720 1045,688" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="970.0" y="652.0" width="150" height="36" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
-<text x="1045" y="670" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Top 2 of 16 Codes</text>
-<polyline points="872,652 872,622 927,622 927,606" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<polyline points="1045,652 1045,622 983,622 983,606" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="869.0" y="556.0" width="200" height="36" rx="7" fill="#F8C9B8" fill-opacity="0.31" stroke="#C2452D" stroke-opacity="0.31" stroke-width="1.2"/>
-<rect x="862.0" y="563.0" width="200" height="36" rx="7" fill="#F8C9B8" fill-opacity="0.53" stroke="#C2452D" stroke-opacity="0.53" stroke-width="1.2"/>
-<rect x="855.0" y="570.0" width="200" height="36" rx="7" fill="#F8C9B8" stroke="#C2452D" stroke-width="2.2"/>
-<text x="955" y="588" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Hash (Token, Code)</text>
-<polyline points="955,570 955,548" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="864.0" y="482.0" width="210" height="52" rx="7" fill="#E1D5E7" fill-opacity="0.31" stroke="#5B3F73" stroke-opacity="0.31" stroke-width="1.2"/>
-<rect x="857.0" y="489.0" width="210" height="52" rx="7" fill="#E1D5E7" fill-opacity="0.53" stroke="#5B3F73" stroke-opacity="0.53" stroke-width="1.2"/>
-<rect x="850.0" y="496.0" width="210" height="52" rx="7" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.4"/>
-<text x="955" y="513" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Token + Code Table</text>
-<text x="955" y="532" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="middle" dominant-baseline="central">4 tokens x 2 codes, per head</text>
-<polyline points="955,496 955,472" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="870.0" y="436.0" width="170" height="36" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
-<text x="955" y="454" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Weighted Sum</text>
-<text x="943" y="412" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="italic" fill="#111" text-anchor="end" dominant-baseline="central">m</text>
-<polyline points="955,436 955,237" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<circle cx="955" cy="225" r="10" fill="#D5E8D4" stroke="#111" stroke-width="1.4"/>
-<path d="M947.93,217.93L962.07,232.07M962.07,217.93L947.93,232.07" stroke="#111" stroke-width="1.3"/>
-<circle cx="955" cy="400" r="3" fill="#111"/>
-<polyline points="955,400 1040,400 1040,368" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<polyline points="1124,790 1124,480" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<circle cx="1124" cy="790" r="3" fill="#111"/>
-<polygon points="1078.0,479.0 1170.0,479.0 1147.92,445.0 1100.08,445.0" fill="#F8C9B8" stroke="#C2452D" stroke-width="2.2" stroke-linejoin="round"/>
-<text x="1124" y="463" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Linear 1</text>
-<polyline points="1124,445 1124,368" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="1010.0" y="330.0" width="124" height="38" rx="7" fill="#F8C9B8" stroke="#C2452D" stroke-width="2.2"/>
-<text x="1072" y="349" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">4 x Cosine</text>
-<polyline points="1184,790 1184,368" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<polygon points="1142.0,367.0 1226.0,367.0 1205.84,333.0 1162.16,333.0" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4" stroke-linejoin="round"/>
-<text x="1184" y="351" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Linear 2</text>
-<polyline points="1072,330 1072,295 1128,295" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<circle cx="1140" cy="295" r="10" fill="#fff" stroke="#111" stroke-width="1.4"/>
-<path d="M1130,295H1150M1140,285V305" stroke="#111" stroke-width="1.3"/>
-<polyline points="1184,333 1184,295 1152,295" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<polyline points="1140,285 1140,245" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<rect x="1025.0" y="206.0" width="150" height="38" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
-<text x="1100" y="225" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">2 x Sigmoid</text>
-<polyline points="1025,225 967,225" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<polyline points="955,215 955,130 657,130" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
-<text x="672" y="360" font-family="Georgia, serif" font-size="16" font-weight="normal" font-style="italic" fill="#111" text-anchor="start" dominant-baseline="central">fit</text>
-<text x="730" y="360" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">= 4 cos( Linear 1 (h), m )</text>
-<text x="672" y="394" font-family="Georgia, serif" font-size="16" font-weight="normal" font-style="italic" fill="#111" text-anchor="start" dominant-baseline="central">gate</text>
-<text x="730" y="394" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">= 2 σ( Linear 2 (h) + fit )</text>
-<text x="672" y="428" font-family="Georgia, serif" font-size="16" font-weight="normal" font-style="italic" fill="#111" text-anchor="start" dominant-baseline="central">output</text>
-<text x="730" y="428" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">= y + gate · m</text>
-<text x="1216" y="72" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#111" text-anchor="end" dominant-baseline="central">Attention with a gated table, last block only</text>
+<rect x="819.7" y="734" width="60.599999999999994" height="28" rx="6" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.2"/>
+<text x="850.0" y="748" font-family="Helvetica, Arial, sans-serif" font-size="14.5" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">France</text>
+<rect x="812.7" y="728" width="74.60000000000002" height="40" fill="none" stroke="#555" stroke-width="1.2" stroke-dasharray="5 4"/>
+<polyline points="850,728 850,666" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="779.0" y="600.0" width="170" height="52" rx="7" fill="#E1D5E7" fill-opacity="0.31" stroke="#5B3F73" stroke-opacity="0.31" stroke-width="1.2"/>
+<rect x="772.0" y="607.0" width="170" height="52" rx="7" fill="#E1D5E7" fill-opacity="0.53" stroke="#5B3F73" stroke-opacity="0.53" stroke-width="1.2"/>
+<rect x="765.0" y="614.0" width="170" height="52" rx="7" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.4"/>
+<text x="850" y="631" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Token Table</text>
+<text x="850" y="650" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" font-style="normal" fill="#333" text-anchor="middle" dominant-baseline="central">8 slots per token</text>
+<polyline points="1060,790 1060,754" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<circle cx="1060" cy="790" r="3" fill="#111"/>
+<polygon points="1018.0,754.0 1102.0,754.0 1081.84,720.0 1038.16,720.0" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="1060" y="738" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Router</text>
+<polyline points="1060,720 1060,688" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="985.0" y="652.0" width="150" height="36" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
+<text x="1060" y="670" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Top 2 of 8 Slots</text>
+<polyline points="850,614 850,590 915,590 915,572" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="1060,652 1060,590 995,590 995,572" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="855.0" y="532.0" width="200" height="40" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
+<text x="955" y="552" font-family="Helvetica, Arial, sans-serif" font-size="14.5" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Weighted Sum, per Head</text>
+<polyline points="955,532 955,412" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="943" y="470" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="italic" fill="#111" text-anchor="end" dominant-baseline="central">m</text>
+<circle cx="955" cy="400" r="10" fill="#D5E8D4" stroke="#111" stroke-width="1.4"/>
+<path d="M947.93,392.93L962.07,407.07M962.07,392.93L947.93,407.07" stroke="#111" stroke-width="1.3"/>
+<polyline points="1160,790 1160,487" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<circle cx="1160" cy="790" r="3" fill="#111"/>
+<polygon points="1118.0,487.0 1202.0,487.0 1181.84,453.0 1138.16,453.0" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4" stroke-linejoin="round"/>
+<text x="1160" y="471" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">Linear</text>
+<polyline points="1160,453 1160,419" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<rect x="1025.0" y="381.0" width="150" height="38" rx="7" fill="#D5E8D4" stroke="#3F6B3D" stroke-width="1.4"/>
+<text x="1100" y="400" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="middle" dominant-baseline="central">2 x Sigmoid</text>
+<polyline points="1025,400 967,400" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<polyline points="955,390 955,300 727,300" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#a)"/>
+<text x="790" y="122" font-family="Georgia, serif" font-size="16" font-weight="normal" font-style="italic" fill="#111" text-anchor="start" dominant-baseline="central">m</text>
+<text x="848" y="122" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">= w₁ slot₁ + w₂ slot₂</text>
+<text x="790" y="156" font-family="Georgia, serif" font-size="16" font-weight="normal" font-style="italic" fill="#111" text-anchor="start" dominant-baseline="central">gate</text>
+<text x="848" y="156" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">= 2 σ( Linear (h) )</text>
+<text x="790" y="190" font-family="Georgia, serif" font-size="16" font-weight="normal" font-style="italic" fill="#111" text-anchor="start" dominant-baseline="central">V′</text>
+<text x="848" y="190" font-family="Georgia, serif" font-size="15" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">= V + gate · m</text>
+<text x="1216" y="72" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#111" text-anchor="end" dominant-baseline="central">Attention with MoME, last block only</text>
 <rect x="660" y="861" width="30" height="22" rx="5" fill="#FFE6CC" stroke="#7A5A36" stroke-width="1.4"/>
 <text x="697" y="872" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">Transformer</text>
 <rect x="784" y="861" width="30" height="22" rx="5" fill="#E1D5E7" stroke="#5B3F73" stroke-width="1.4"/>
@@ -166,5 +140,5 @@
 <rect x="980" y="861" width="30" height="22" rx="5" fill="#DAE8FC" stroke="#4A6A9A" stroke-width="1.4"/>
 <text x="1017" y="872" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">Linear</text>
 <rect x="1070" y="861" width="30" height="22" rx="5" fill="#F8C9B8" stroke="#C2452D" stroke-width="2.2"/>
-<text x="1107" y="872" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">New in this repo</text>
+<text x="1107" y="872" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#111" text-anchor="start" dominant-baseline="central">Changed in this repo</text>
 </svg>

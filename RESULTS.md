@@ -255,6 +255,8 @@ Time per training step at 5m, one method at a time on one CPU thread, from `debu
 | **magree** | **.265** | **1.40x** | **4.75M** |
 | mexp8 | .425 | 2.25x | 4.76M |
 
+`mmomez`, timed later in a separate run of the same script: .251 seconds per step, 1.31x Engram in that run.
+
 > **`magree` costs 1.40x Engram's time per step. A fair comparison would give Engram that time as well, and that has not been run.**
 
 Do not read speed from `train_s` in `results.jsonl`. Those runs shared the machine.
