@@ -45,19 +45,19 @@ The model has four additions on top of a plain transformer, and all of them fit 
 3. **MoME sits in the last block.** Each token has 8 slots. Each attention head uses the hidden state to pick 2 of them and adds them to its values.
 4. **An n-gram table sits after the last block.** It is Engram's table, keyed on the last 2 and 3 tokens, with its output starting at zero.
 
-Adding the parts one at a time lowers web loss at each step:
+MoE alone and MoME alone each lower web loss, and the parts together go lower:
 
 | Model at 1h | Weights | Web loss |
 |---|---|---|
 | Plain | 9.84M | 4.656 |
-| MoE | 14.55M | 4.620 |
-| MoME | 25.25M | 4.591 |
+| MoE alone | 14.55M | 4.620 |
+| MoME alone | 25.25M | 4.591 |
 | `tmomez`: word table, MoME, n-gram table | 43.55M | 4.570 |
-| **`mmomez`: the same with MoE** | **43.30M** | **4.550** |
+| **`mmomez`: those three tables + MoE** | **43.30M** | **4.550** |
 
-> **Each step lowers web loss by .02 to .04. The last step adds no weights, because MoE takes them from the tables.**
+> **Adding MoE to the three tables lowers web loss by .02 with no extra weights, because MoE takes them from the tables.**
 
-The first three steps add weights, so this table does not show which part is worth its size. MoME has 18M fewer weights than `mmomez`. MoME + MoE, which would show how much the word and n-gram tables add, has no 1h result yet.
+These models have different weights, so this table does not show which part is worth its size. MoME has 18M fewer weights than `mmomez`. MoME + MoE, which would show how much the word and n-gram tables add, has no 1h result yet.
 
 `mmomez` costs 1.31x Engram's time per step, measured at 5m on one CPU thread.
 
