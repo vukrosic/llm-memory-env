@@ -55,21 +55,21 @@ An AI coding agent did this work and wrote this page. No person or reviewer has 
 |---|---|
 | Test environment at 5 tiers, 74 scores | Done, reproduced from a clean copy |
 | 9 baselines up to 1h, at 2 or more lrs (`moe` at 5m at one) | Done |
-| Controls: broken table, memorizer, published module + MoE | Done at 1m and 5m, MoE controls still running at 1h |
+| Controls: broken table, memorizer, published module + MoE | Done at 1m, 5m and 1h |
 | Audit of which scores can judge | Done: 12 of 74 pass on the fixed test |
 | Check against published rankings | Done: about half hold, small gaps out of reach |
 | Win rule, written before new designs ran | Done, and no published or new module passes it |
 | About 90 new designs, with predictions written first | Done, see [EXPERIMENTS.md](EXPERIMENTS.md) |
 | Why tables lose the relation gap, switch-off tests | Done at 5m |
 | Time per step | Done at 5m on one CPU thread |
-| Hidden items | Baselines, `tmomez` and `tmixz` only |
+| Hidden items | Read for baselines, `tmomez` and `tmixz`. Scored but not read for `magree`, `mexp8` and the MoE controls at 1h |
 
 ---
 
 ## Do these before you submit any of them
 
 - **Train each setting more than once.** Each setting has one training run, so standard errors cover items only. Some z scores here will shrink.
-- **Score your final design on hidden items, once, at the end.** `magree`, `mexp8`, `mapair`, `mbuck64` and the controls have never used them. The hidden scores of `tmomez` and `tmixz` were read before `magree` was built, so consider holding out new items.
+- **Score your final design on hidden items, once, at the end.** `mmomez`, `mapair` and `mbuck64` have never used them. The 1h job also scored `magree`, `mexp8` and the MoE controls on them, and those scores are in `final_results.jsonl`, unread. The hidden scores of `tmomez` and `tmixz` were read before `magree` was built, so consider holding out new items.
 - **Tune all designs equally.** 43 of 70 methods at 5m ran at one lr, and baselines ran at two.
 - **Compare the ports with the authors' code.** They follow the papers' text, and the docstrings in `methods.py` say what was adapted. Any error here changes the results for that module.
 - **Finish the literature check**, see below.

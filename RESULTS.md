@@ -192,6 +192,8 @@ At 1h (width 256, 6 layers, 10000 steps, weight limit 43.54M):
 | design, lr | weights | web loss | stored facts | new wording | name far | relation gap | usual phrase |
 |---|---|---|---|---|---|---|---|
 | baseline best | | 4.591 mome | 0.084 bigram | 1.417 stem | 1.825 stem | 6.041 moe | 1.456 engram |
+| magree 0.02 | 43.38M | 4.558 (+12.2) | 0.062 (+2.2) | 1.484 (-0.7) | 1.605 (+2.5) | 4.245 (-15.4) | 1.422 (+3.5) |
+| mexp8 0.01 | 43.44M | 4.554 (+13.0) | 0.072 (+0.9) | 1.837 (-3.4) | 2.283 (-4.1) | 4.581 (-11.8) | 1.425 (+3.5) |
 | mmomez 0.01 | 43.30M | 4.550 (+14.3) | 0.091 (-0.4) | 1.370 (+0.5) | 1.706 (+1.4) | 4.383 (-14.4) | 1.410 (+4.8) |
 | mmixz 0.01 | 43.30M | 4.553 (+13.2) | 0.065 (+1.7) | 1.422 (-0.0) | 1.695 (+1.2) | 3.830 (-17.8) | 1.413 (+5.0) |
 | mtrip 0.01 | 43.31M | 4.565 (+9.3) | 0.082 (+0.2) | 1.541 (-1.2) | 1.790 (+0.4) | 4.166 (-16.0) | 1.413 (+4.4) |
@@ -199,9 +201,11 @@ At 1h (width 256, 6 layers, 10000 steps, weight limit 43.54M):
 | ttrip 0.01 | 43.41M | 4.580 (+3.9) | 0.082 (+0.1) | 1.519 (-1.0) | 1.765 (+0.7) | 4.416 (-13.2) | 1.429 (+2.7) |
 | tmomez 0.01 | 43.55M | 4.570 (+7.1) | 0.120 (-2.3) | 1.658 (-2.3) | 2.136 (-3.2) | 4.298 (-14.8) | 1.421 (+3.8) |
 | tmixz 0.02 | 43.55M | 4.575 (+5.8) | 0.105 (-1.7) | 1.542 (-1.3) | 1.932 (-1.2) | 4.758 (-10.5) | 1.431 (+2.6) |
+| momemoe 0.02 | 29.96M | 4.562 (+10.9) | 0.094 (-0.8) | 2.038 (-5.2) | 2.369 (-4.9) | 4.254 (-15.7) | 1.482 (-2.9) |
+| engmoe 0.01 | 43.20M | 4.584 (+2.2) | 0.074 (+1.0) | 3.353 (-9.7) | 3.710 (-11.9) | 4.976 (-8.8) | 1.433 (+3.3) |
+| vemoe 0.01 | 29.91M | 4.581 (+3.7) | 0.111 (-2.3) | 1.709 (-2.9) | 2.106 (-3.3) | 4.902 (-9.7) | 1.480 (-2.6) |
 
-> [!NOTE]
-> `magree`, `mexp8` and the three controls `engmoe`, `vemoe`, `momemoe` were still training at 1h when this was written, so they are missing from this table. The rows above have no gate.
+`magree`, `mexp8` and the controls ran in a later job, with both lrs. Every design here keeps the relation gap as its main loss.
 
 `tmomez` also loses all three fact scores by 2 standard errors or more. MoE alone has the best relation gap at 1h (6.041). At 5m adding MoE raised the gap of a design, `ttrip` 3.19 to `mtrip` 4.28. At 1h it does not: `ttrip` 4.416, `mtrip` 4.166.
 
@@ -212,7 +216,7 @@ At 1h (width 256, 6 layers, 10000 steps, weight limit 43.54M):
 
 ## Check hidden items once, at the end
 
-A third of the text rows and facts and half of each benchmark are held back, and `env.py --final` scores them. Only baselines, `tmomez` and `tmixz` have used them, in 35 runs. **`magree`, `mexp8`, `mapair`, `mbuck64` and the controls have not been checked on hidden items.** The hidden scores of `tmomez` and `tmixz` were read before `magree` was built, so these items are not fully fresh.
+A third of the text rows and facts and half of each benchmark are held back, and `env.py --final` scores them. Their scores have been read only for baselines, `tmomez` and `tmixz`, in 35 runs. **The 1h job also scored `magree`, `mexp8` and the MoE controls on them, 10 runs that are in `final_results.jsonl` and that nobody has read. `mmomez`, `mapair` and `mbuck64` have not been scored on them.** The hidden scores of `tmomez` and `tmixz` were read before `magree` was built, so these items are not fully fresh.
 
 Hidden items at 5m:
 
@@ -514,7 +518,7 @@ Each row is one method at its tuned lr, including every failed idea. [EXPERIMENT
 
 </details>
 
-<details><summary>1h, 21 methods</summary>
+<details><summary>1h, 26 methods</summary>
 
 | method | lr | weights | web loss | stored facts | new wording | name far | relation gap | usual phrase |
 |---|---|---|---|---|---|---|---|---|
@@ -539,6 +543,11 @@ Each row is one method at its tuned lr, including every failed idea. [EXPERIMENT
 | tpair | 0.01 | 43.37M | 4.601 | 0.094 | 1.448 | 1.906 | 4.399 | 1.425 |
 | thash4 | 0.01 | 43.38M | 4.607 | 0.143 | 1.593 | 2.293 | 4.933 | 1.446 |
 | mmixz | 0.01 | 43.30M | 4.553 | 0.065 | 1.422 | 1.695 | 3.830 | 1.413 |
+| magree | 0.02 | 43.38M | 4.558 | 0.062 | 1.484 | 1.605 | 4.245 | 1.422 |
+| mexp8 | 0.01 | 43.44M | 4.554 | 0.072 | 1.837 | 2.283 | 4.581 | 1.425 |
+| engmoe | 0.01 | 43.20M | 4.584 | 0.074 | 3.353 | 3.710 | 4.976 | 1.433 |
+| vemoe | 0.01 | 29.91M | 4.581 | 0.111 | 1.709 | 2.106 | 4.902 | 1.480 |
+| momemoe | 0.02 | 29.96M | 4.562 | 0.094 | 2.038 | 2.369 | 4.254 | 1.482 |
 
 </details>
 

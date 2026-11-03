@@ -62,20 +62,21 @@ MoE alone and MoME alone each lower web loss, and the parts together go lower:
 | Plain | 9.84M | 4.656 |
 | MoE alone | 14.55M | 4.620 |
 | MoME alone | 25.25M | 4.591 |
+| MoME + MoE | 29.96M | 4.562 |
 | `tmomez`: word table, MoME, n-gram table | 43.55M | 4.570 |
 | **`mmomez`: those three tables + MoE** | **43.30M** | **4.550** |
 
 > **Adding MoE to the three tables lowers web loss by .02 with no extra weights, because MoE takes them from the tables.**
 
-These models have different weights, so this table does not show which part is worth its size. MoME has 18M fewer weights than `mmomez`. MoME + MoE, which would show how much the word and n-gram tables add, has no 1h result yet.
+These models have different weights, so this table does not show which part is worth its size. MoME + MoE uses only published parts and has 13M fewer weights than `mmomez`. It gets most of the web gain over MoME alone, so the word and n-gram tables add .012 of web loss (4.7 standard errors). They add more on facts: new wording is 1.370 with them and 2.038 without.
 
 `mmomez` costs 1.31x Engram's time per step, measured at 5m on one CPU thread.
 
-### Try `magree` for fact recall at 5m, because three tables each do a different job
+### Try `magree` for fact recall, because three tables each do a different job
 
 ![Architecture of magree: the same model with a gated table inside attention](charts/architecture-magree.png)
 
-`magree` has the same layout as `mmomez`, with a gated table in place of MoME. It has no 1h result yet. Tier 5m is a model 96 wide with 4 layers, trained for 1500 steps.
+`magree` has the same layout as `mmomez`, with a gated table in place of MoME. At 1h it has the best stored facts (.062, +2.2) and name far (1.605, +2.5) of any model here, web loss 4.558 (+12.2) and relation gap 4.245 (-15.4). Its lead is larger at 5m, shown below. Tier 5m is a model 96 wide with 4 layers, trained for 1500 steps.
 
 | Score | Engram | Best published module | `magree` |
 |---|---|---|---|
@@ -104,7 +105,8 @@ Results are at 1h unless the row says otherwise, in standard errors from the bes
 |---|---|---|---|
 | Lowest web loss | `mmomez` | Web 4.550 (+14.3), relation gap (-14.4) | 43.30M |
 | Web loss and stored facts | `mmixz`: `mmomez` with half its slots keyed by token and half by last 2 tokens | Web 4.553 (+13.2), stored .065 (+1.7), relation gap (-17.8) | 43.30M |
-| Fact recall at 5m | `magree` | Name far (+8.3), stored (+5.0), relation gap (-8.4) | 4.75M at 5m |
+| Fact recall | `magree` | Stored .062 (+2.2), name far 1.605 (+2.5), relation gap (-15.4) | 43.38M |
+| Low web loss with published parts only | MoME + MoE | Web 4.562 (+10.9), new wording (-5.2), relation gap (-15.7) | 29.96M |
 | Highest relation gap with a table, at 5m | `mbuck64`: rows keyed by token and a bucket of another token | Gap 5.598 (+1.6), new wording (-6.0) | 4.74M at 5m |
 | Highest relation gap | MoE alone, published | Gap 6.041, web 4.620 | 14.55M |
 | Low web loss, published | MoME | Web 4.591 | 25.25M |
@@ -180,10 +182,10 @@ There is room for many separate papers. [PAPER-IDEA.md](PAPER-IDEA.md) has more 
 
 > [!WARNING]
 > - **Small models.** Every result comes from models of about 50M weights or fewer. The 5h tier (512 wide, 8 layers) has settings in `env.py` and has never run.
-> - **`magree` and MoME + MoE have no result at 1h yet.** Those runs are still training, so part of `mmomez`'s lead may come from MoME and MoE alone.
+> - **Most of `mmomez`'s web lead comes from published parts.** Web loss is 4.591 for MoME alone, 4.562 for MoME + MoE and 4.550 for `mmomez`.
 > - **It costs more compute.** `mmomez` takes 1.31x Engram's time per step and `magree` 1.40x, and a run that gives Engram the same time has not been done.
 > - **One training run per setting.** Standard errors cover the test items and do not cover the change between training runs.
-> - **Hidden test items are mostly unused.** Only baselines, `tmomez` and `tmixz` have been scored on them. `mmomez` and `magree` have not.
+> - **Hidden test items are mostly unused.** Their scores have been read only for baselines, `tmomez` and `tmixz`. The 1h job also scored `magree`, `mexp8` and the MoE controls on them, and nobody has read those scores. `mmomez` has not been scored on them.
 > - **Even the plain model beats it on the relation gap.** At 1h `mmomez` scores 4.383 and a model with no memory scores 5.406.
 > - **Published gaps are out of reach.** This test can judge large gaps between modules. It can't judge published gaps of about .001, and published benchmarks sit near chance at these sizes.
 > - **Fact scores depend on lr.** At 5m their module rankings flip between lr .01 and .02.
