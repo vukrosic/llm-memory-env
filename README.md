@@ -1,13 +1,23 @@
 # Free ICML research: LLM memory modules and a test to compare them
 
 > [!IMPORTANT]
-> **This is giveaway research for ICML 2027.** It was made for students at [AI Research School](https://www.skool.com/become-ai-researcher-2669), and anyone can use it. Take the code, the results or the ideas and publish your own paper. You need no permission and you do not need to add anyone as an author.
+> **This is giveaway research for ICML 2027.** It was made in our school, [AI Research School](https://www.skool.com/become-ai-researcher-2669), and it is open to anybody. Take the code, the results or the ideas and publish your own paper. You need no permission and you do not need to add anyone as an author.
 >
 > A memory module gives an LLM a learned table to look things up in. This repo tests 9 published modules and about 90 new designs on the same text at several sizes. The largest size so far has about 43M weights. **At that size, the design below has the lowest web loss of the 21 modules tested and ties the best published modules on fact recall. It loses one score, the relation gap.**
 
 ![Architecture of mmomez: a word table, MoME in the last block, an n-gram table and MoE](charts/architecture.png)
 
 **`mmomez`, the best design at the largest size so far.** Left: the whole model. Right: attention in its last block. The words are an example. Every part follows a published module, and the one change is in coral: the n-gram table's output starts at zero.
+
+### How the model uses the text so far to choose what to add
+
+This is the MoME part of the figure, in the last block, with the sizes of the model above.
+
+Each of the 20,000 tokens in the vocabulary has its own 8 learned vectors, each 1/8 the size of the token embedding. In attention, for every token, each head uses the text so far to pick 2 of that token's vectors, mix them and add them to that token's value, so the same word can add something different in a different sentence.
+
+For example, "France" might learn one vector that pushes the model toward "Paris", one toward "euro" and one toward "French". In "The capital of France is", a head could pick the "Paris" vector, and in "The currency of France is", the "euro" vector. This is only an illustration, because we haven't checked what the vectors really hold.
+
+It doesn't fully work yet: a simpler model with no memory table is still better at ignoring facts the question didn't ask for.
 
 ---
 
