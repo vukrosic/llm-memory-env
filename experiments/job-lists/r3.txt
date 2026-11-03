@@ -1,0 +1,6 @@
+tmome 0.01
+tmome 0.02
+treader 0.01
+treader 0.02
+tmix 0.01
+tmix 0.02

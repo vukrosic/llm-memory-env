@@ -1,0 +1,3 @@
+nice -n 20 python3 env.py --tier 5m --method mtrip --lr 0.01 --tag _keep --keep --max-seconds 450
+nice -n 20 python3 env.py --tier 5m --method mtok --lr 0.01 --max-seconds 450
+nice -n 20 python3 env.py --tier 5m --method mgram --lr 0.01 --max-seconds 450

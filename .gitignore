@@ -1,0 +1,6 @@
+__pycache__/
+data/
+*.pt
+.DS_Store
+kaggle/data-pack/
+kaggle/*/

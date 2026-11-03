@@ -1,0 +1,5 @@
+tmomez 0.01
+tmixz 0.01
+plain 0.01
+stem 0.01
+moe 0.01

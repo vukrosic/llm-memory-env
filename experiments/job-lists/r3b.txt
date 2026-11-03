@@ -1,0 +1,6 @@
+tmix 0.03
+tmome 0.03
+tmix1 0.02
+tmix3 0.02
+tmix0 0.02
+tmomeg 0.02

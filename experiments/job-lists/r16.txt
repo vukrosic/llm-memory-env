@@ -1,0 +1,6 @@
+nice -n 20 python3 env.py --tier 5m --method mapair --lr 0.02 --max-seconds 450
+nice -n 20 python3 env.py --tier 5m --method mapair2 --lr 0.01 --max-seconds 450
+nice -n 20 python3 env.py --tier 5m --method mapair8 --lr 0.01 --max-seconds 450
+nice -n 20 python3 env.py --tier 5m --method mboth --lr 0.01 --max-seconds 450
+nice -n 20 python3 env.py --tier 1m --method mapair --lr 0.01 --max-seconds 450
+nice -n 20 python3 env.py --tier 1m --method mapair --lr 0.02 --max-seconds 450

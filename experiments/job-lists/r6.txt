@@ -1,0 +1,3 @@
+ttrip 0.02
+trip 0.02
+ttrip 0.01

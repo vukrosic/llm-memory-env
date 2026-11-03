@@ -1,0 +1,6 @@
+--tier 1m --method engmoe --lr 0.01
+--tier 1m --method engmoe --lr 0.02
+--tier 1m --method vemoe --lr 0.01
+--tier 1m --method vemoe --lr 0.02
+--tier 1m --method momemoe --lr 0.01
+--tier 1m --method momemoe --lr 0.02

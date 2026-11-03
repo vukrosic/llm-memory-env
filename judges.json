@@ -1,0 +1,14 @@
+[
+"text.web.loss",
+"rarity.token-common.loss",
+"rarity.token-mid.loss",
+"rarity.phrase-unseen.loss",
+"rarity.phrase-1-9.loss",
+"rarity.phrase-10plus.loss",
+"ambiguous.usual.loss",
+"changed.other-relation.gap",
+"context.copy-text.gain",
+"memorize.train.loss",
+"memorize.train.acc",
+"text.fiction.loss"
+]

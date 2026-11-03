@@ -1,0 +1,4 @@
+mome 0.01
+token 0.01
+engram 0.02
+bigram 0.01

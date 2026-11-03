@@ -1,0 +1,6 @@
+tmixz1 0.02
+tmomez1 0.02
+tgz 0.02
+tbiz 0.02
+tsplit 0.02
+tsplit 0.01

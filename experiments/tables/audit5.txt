@@ -1,0 +1,78 @@
+tier 5m, check tier 1m, modules ['bigram', 'engram', 'mome', 'plain', 'stem', 'tngram', 'token', 've']
+| score | moved | spread | lr rho | tier rho | hidden rho | judges |
+|---|---|---|---|---|---|---|
+| text.web.loss | 1.00 | 10.0 | 0.83 | 0.88 | nan | yes |
+| text.web.acc | 1.00 | 3.6 | 0.60 | 0.55 | nan | yes |
+| rarity.token-common.loss | 1.00 | 6.6 | 0.83 | 0.74 | nan | yes |
+| rarity.token-mid.loss | 1.00 | 7.3 | 0.88 | 0.98 | nan | yes |
+| rarity.token-rare.loss | 1.00 | 2.8 | 0.55 | 0.60 | nan |  |
+| rarity.phrase-unseen.loss | 1.00 | 5.2 | 0.90 | 0.81 | nan | yes |
+| rarity.phrase-1-9.loss | 1.00 | 9.0 | 0.81 | 0.88 | nan | yes |
+| rarity.phrase-10plus.loss | 1.00 | 10.0 | 0.93 | 0.86 | nan | yes |
+| ambiguous.usual.loss | 1.00 | 6.3 | 0.93 | 0.57 | nan | yes |
+| ambiguous.other.loss | 1.00 | 3.0 | 0.05 | -0.24 | nan |  |
+| facts.stored.copies2.acc | 1.00 | 4.7 | 0.02 | 0.81 | nan |  |
+| facts.stored.copies2.nll | 1.00 | 6.2 | 0.43 | 0.38 | nan | yes |
+| facts.stored.copies2.pick | 1.00 | 4.7 | -0.40 | 0.14 | nan |  |
+| facts.stored.copies8.acc | 1.00 | 5.3 | 0.55 | 0.69 | nan | yes |
+| facts.stored.copies8.nll | 1.00 | 9.4 | 0.57 | 0.90 | nan | yes |
+| facts.stored.copies8.pick | 1.00 | 5.4 | 0.33 | 0.43 | nan |  |
+| facts.stored.copies32.acc | 1.00 | 11.1 | 0.95 | 0.76 | nan | yes |
+| facts.stored.copies32.nll | 1.00 | 13.9 | 0.95 | 0.81 | nan | yes |
+| facts.stored.copies32.pick | 1.00 | 10.7 | 0.90 | 0.62 | nan | yes |
+| facts.stored.name-near.nll | 1.00 | 4.8 | 0.67 | 0.76 | nan | yes |
+| facts.stored.name-near.pick | 1.00 | 5.3 | 0.81 | 0.81 | nan | yes |
+| facts.stored.name-far.nll | 1.00 | 15.3 | 0.93 | 0.86 | nan | yes |
+| facts.stored.name-far.pick | 1.00 | 10.1 | 0.90 | 0.52 | nan | yes |
+| facts.stored.common-answer.acc | 1.00 | 4.8 | -0.19 | 0.43 | nan |  |
+| forget.early.nll | 1.00 | 4.7 | 0.07 | 0.64 | nan |  |
+| forget.early.pick | 0.88 | 2.4 | 0.55 | 0.07 | nan |  |
+| facts.new-wording.copies2.acc | 1.00 | 3.2 | 0.43 | -0.19 | nan |  |
+| facts.new-wording.copies2.nll | 1.00 | 7.7 | 0.79 | 0.29 | nan |  |
+| facts.new-wording.copies2.pick | 1.00 | 3.8 | 0.26 | -0.05 | nan |  |
+| facts.new-wording.copies8.acc | 1.00 | 6.9 | 0.95 | -0.12 | nan |  |
+| facts.new-wording.copies8.nll | 1.00 | 11.3 | 0.79 | 0.86 | nan | yes |
+| facts.new-wording.copies8.pick | 1.00 | 7.2 | 0.71 | -0.64 | nan |  |
+| facts.new-wording.copies32.acc | 1.00 | 11.6 | 0.93 | 0.88 | nan | yes |
+| facts.new-wording.copies32.nll | 1.00 | 15.6 | 0.90 | 0.81 | nan | yes |
+| facts.new-wording.copies32.pick | 1.00 | 9.3 | 0.81 | 0.69 | nan | yes |
+| facts.new-wording.name-near.nll | 1.00 | 7.1 | 0.57 | 0.62 | nan | yes |
+| facts.new-wording.name-near.pick | 1.00 | 4.6 | 0.29 | 0.48 | nan |  |
+| facts.new-wording.name-far.nll | 1.00 | 18.5 | 0.83 | 0.83 | nan | yes |
+| facts.new-wording.name-far.pick | 1.00 | 10.8 | 0.83 | 0.60 | nan | yes |
+| facts.new-wording.common-answer.acc | 1.00 | 6.5 | 0.55 | 0.76 | nan | yes |
+| facts.natural.over-chance | 0.50 | 3.1 | 0.69 | -0.36 | nan |  |
+| facts.natural.nll | 1.00 | 3.3 | 0.48 | 0.14 | nan |  |
+| changed.other-name.gap | 1.00 | 14.2 | 0.71 | 0.62 | nan | yes |
+| changed.other-relation.gap | 1.00 | 10.1 | 0.83 | 0.60 | nan | yes |
+| unknown.entropy-gap | 1.00 | 10.4 | 0.79 | 0.69 | nan | yes |
+| conflict.page-gain | 1.00 | 10.9 | 0.69 | 0.79 | nan | yes |
+| conflict.memory-drop | 1.00 | 15.8 | 0.19 | -0.07 | nan |  |
+| conflict.follows-page | 1.00 | 5.3 | 0.90 | 0.14 | nan |  |
+| context.copy-text.gain | 1.00 | 7.5 | 0.52 | 0.31 | nan | yes |
+| context.copy-text.acc | 1.00 | 2.9 | 0.40 | -0.05 | nan |  |
+| context.copy-random.gain | 1.00 | 14.1 | 0.45 | 0.76 | nan | yes |
+| context.recall-near.gain | 1.00 | 8.4 | 0.33 | 0.57 | nan |  |
+| context.recall-far.gain | 0.50 | 12.4 | 0.76 | 0.71 | nan | yes |
+| track.right-name.gap | 0.00 | 2.3 | -0.12 | -0.21 | nan |  |
+| track.latest.gap | 0.00 | 2.2 | -0.05 | -0.19 | nan |  |
+| messy.lower.delta | 1.00 | 2.4 | 0.17 | 0.10 | nan |  |
+| messy.typos.delta | 1.00 | 2.2 | 0.36 | -0.31 | nan |  |
+| memorize.train.loss | 1.00 | 17.4 | 0.93 | 0.83 | nan | yes |
+| memorize.train.acc | 1.00 | 9.3 | 0.93 | 0.98 | nan | yes |
+| text.fiction.loss | 1.00 | 12.6 | 0.88 | 0.67 | nan | yes |
+| text.math.loss | 1.00 | 19.3 | 0.33 | -0.26 | nan |  |
+| text.code.loss | 1.00 | 29.9 | -0.31 | -0.62 | nan |  |
+| text.german.loss | 1.00 | 13.1 | 0.62 | 0.52 | nan | yes |
+| bench.blimp.acc | 0.38 | 2.2 | 0.74 | 0.07 | nan |  |
+| bench.blimp.margin | 0.50 | 2.7 | 0.12 | -0.36 | nan |  |
+| bench.hellaswag.acc | 0.00 | 2.5 | 0.74 | -0.05 | nan |  |
+| bench.hellaswag.margin | 1.00 | 2.3 | -0.02 | -0.26 | nan |  |
+| bench.winogrande.acc | 0.00 | 2.5 | 0.24 | -0.60 | nan |  |
+| bench.winogrande.margin | 0.00 | 0.8 | -0.17 | 0.83 | nan |  |
+| bench.arc.acc | 0.00 | 2.8 | 0.57 | 0.40 | nan |  |
+| bench.arc.margin | 1.00 | 2.4 | 0.00 | -0.69 | nan |  |
+| bench.mmlu.acc | 0.00 | 2.0 | 0.93 | 0.21 | nan |  |
+| bench.mmlu.margin | 1.00 | 3.5 | 0.33 | 0.21 | nan |  |
+| forget.after-third.delta | 1.00 | 3.7 | 0.48 | 0.79 | nan | yes |
+| judges: 38 of 74 |

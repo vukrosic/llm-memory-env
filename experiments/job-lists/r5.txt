@@ -1,0 +1,6 @@
+tmixo 0.01
+tmixo 0.02
+tmomeo 0.01
+tmomeo 0.02
+tgo 0.02
+tmixog 0.02

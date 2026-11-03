@@ -1,0 +1,12 @@
+late 0.01
+late 0.02
+lve 0.01
+lve 0.02
+lmome 0.01
+lmome 0.02
+lreader 0.01
+lreader 0.02
+lmix 0.01
+lmix 0.02
+ltoken 0.01
+ltoken 0.02

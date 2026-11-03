@@ -1,0 +1,5 @@
+token 0.01 _hid --final
+bigram 0.01 _hid --final
+tngram 0.02 _hid --final
+ttrip 0.01 "" 
+ttrip 0.02 "" 

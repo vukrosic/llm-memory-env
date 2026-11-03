@@ -1,0 +1,5 @@
+python3 env.py --tier 5m --method thash --lr 0.01 --max-seconds 400
+python3 env.py --tier 5m --method tpair --lr 0.01 --max-seconds 400
+python3 env.py --tier 5m --method thash4 --lr 0.01 --max-seconds 400
+python3 env.py --tier 5m --method thash --lr 0.02 --max-seconds 400
+python3 env.py --tier 1m --method thash4 --lr 0.01 --max-seconds 400

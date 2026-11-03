@@ -1,0 +1,5 @@
+tmomez 0.02
+tmixz 0.02
+mome 0.01
+ve 0.01
+token 0.02

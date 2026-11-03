@@ -1,0 +1,6 @@
+tmixz 0.01
+tmixz 0.02
+tmixd 0.01
+tmixd 0.02
+tmomez 0.02
+tmomed 0.02
