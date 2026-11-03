@@ -1,7 +1,7 @@
-# Free ICML research: LLM memory modules and a test to compare them
+# Environment for researching LLM memory modules
 
 > [!IMPORTANT]
-> **This is giveaway research for ICML 2027.** It was made in our school, [AI Research School](https://www.skool.com/become-ai-researcher-2669), and it is open to anybody. Take the code, the results or the ideas and publish your own paper. You need no permission and you do not need to add anyone as an author.
+> We are using this environment to write a paper for ICML 2027. It was built in [AI Research School](https://www.skool.com/become-ai-researcher-2669), and you can use the code, results and ideas in your own research. The code is MIT licensed, and neither permission nor co-authorship is needed.
 >
 > A memory module gives an LLM a learned table to look things up in. This repo tests 9 published modules and about 90 new designs on the same text at several sizes. The largest size so far has about 43M weights. **At that size, the design below has the lowest web loss of the 21 modules tested and ties the best published modules on fact recall. It loses one score, the relation gap.**
 
@@ -165,7 +165,7 @@ The ports follow the papers' text, and they have not been compared with the auth
 
 ## Pick any of these research directions
 
-There is room for many separate papers. [PAPER-IDEA.md](PAPER-IDEA.md) has more directions, a draft abstract and what a reviewer will ask.
+Each direction can support a separate paper. [PAPER-IDEA.md](PAPER-IDEA.md) has more directions, a draft abstract and what a reviewer will ask.
 
 1. **Fix the leak.** Can a table recall a fact in new wording and hold it back when the question changes?
 2. **Change the key.** `magree` recalls and `mbuck64` protects the gap. Can a key do both?
@@ -175,6 +175,10 @@ There is room for many separate papers. [PAPER-IDEA.md](PAPER-IDEA.md) has more 
 6. **Make it cheap.** Can the gated table keep its gain below 1.40x Engram's step time?
 7. **Explain the size flips.** Why does module order change with size, and does tokens per table row predict it?
 8. **Test bigger models.** Do scores at small sizes predict the order at 5h and beyond?
+9. **Check whether word order limits MoME.** A token picks its vectors before the words after it are read, and most fact questions put the name before the relation words. Is the relation gap better when the relation comes first?
+10. **Let the later token choose.** Can a later token's query help choose the vectors, instead of only weighting what each head already picked?
+11. **Look inside the vectors.** Do MoME's vectors separate a word's meanings or a fact's relations? Nobody has checked.
+12. **Switch parts off in `mmomez`.** What does each part do at 1h? These tests have run only on `magree` at 5m.
 
 ---
 

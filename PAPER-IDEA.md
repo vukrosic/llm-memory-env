@@ -1,9 +1,9 @@
-# Free research directions for ICML 2027: LLM memory modules
+# Research directions for LLM memory modules
 
-This is giveaway research. It was made in our school, [AI Research School](https://www.skool.com/become-ai-researcher-2669), and it is open to anybody. The code is MIT licensed, no permission is needed, and you do not need to add anyone as an author. Citing this repo is welcome if it helped.
+We are using this environment to write a paper for ICML 2027. It was built in [AI Research School](https://www.skool.com/become-ai-researcher-2669), and you can use it in your own research. The code is MIT licensed, and neither permission nor co-authorship is needed. Please cite this repo if it helped.
 
 > [!IMPORTANT]
-> **There is room for many papers here, so pick the one you like.** The strongest result so far is `mmomez` at 1h, about 43M weights: it has the lowest web loss, ties the best published modules on fact recall, and loses the relation gap. The largest tier has never run, and nothing yet shows the small models predict large ones. Check all of it before you submit.
+> **Each direction below can support a separate paper.** The strongest result so far is `mmomez` at 1h, about 43M weights: it has the lowest web loss, ties the best published modules on fact recall, and loses the relation gap. The largest tier has never run, and nothing yet shows the small models predict large ones. Check all of it before you submit.
 
 An AI coding agent did this work and wrote this page. No person or reviewer has checked it.
 
